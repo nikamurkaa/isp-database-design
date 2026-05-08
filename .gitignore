@@ -1,0 +1,21 @@
+# Local database files and backups
+*.dump
+*.backup
+*.sql.gz
+*.sqlite
+*.db
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Temporary exports
+/tmp/
+*.log

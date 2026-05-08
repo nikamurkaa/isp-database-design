@@ -1,0 +1,27 @@
+erDiagram
+    POSITIONS ||--o{ EMPLOYEES : defines
+    CLIENTS ||--o| INDIVIDUAL_CLIENTS : personal_details
+    CLIENTS ||--o| LEGAL_ENTITIES : company_details
+    CLIENTS ||--o{ AGREEMENTS : signs
+    EMPLOYEES ||--o{ AGREEMENTS : creates
+
+    EQUIPMENT_TYPES ||--o{ EQUIPMENT : classifies
+    BRANDS ||--o{ MODELS : owns
+    MODELS ||--o{ EQUIPMENT : describes
+    EQUIPMENT ||--o{ EQUIPMENT_SPECIFICATIONS : has
+    SPECIFICATIONS ||--o{ EQUIPMENT_SPECIFICATIONS : defines
+
+    AGREEMENTS ||--o{ AGREEMENT_EQUIPMENT : includes
+    EQUIPMENT ||--o{ AGREEMENT_EQUIPMENT : used_in
+    AGREEMENTS ||--o{ AGREEMENT_SERVICES : includes
+    SERVICES ||--o{ AGREEMENT_SERVICES : used_in
+    AGREEMENTS ||--o{ PAYMENT_OPERATIONS : paid_by
+
+    CLIENTS ||--o{ CONNECTION_REQUESTS : creates
+    SERVICES ||--o{ CONNECTION_REQUESTS : requested
+    EMPLOYEES ||--o{ CONNECTION_REQUESTS : processes
+    CONNECTION_REQUESTS ||--o{ TECHNICAL_TICKETS : generates
+    AGREEMENTS ||--o{ TECHNICAL_TICKETS : related_to
+    EMPLOYEES ||--o{ TECHNICAL_TICKETS : assigned_to
+    EQUIPMENT ||--o{ TECHNICAL_TICKETS : concerns
+    EMPLOYEES ||--o{ NETWORK_CAPACITY_UPDATES : updates

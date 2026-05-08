@@ -1,0 +1,11 @@
+flowchart TD
+    A[Client submits connection request] --> B[Customer manager validates client data]
+    B --> C[System checks requested service]
+    C --> D{Enough network capacity?}
+    D -- Yes --> E[Request approved]
+    D -- No --> F[Capacity check required]
+    E --> G[Agreement is created]
+    G --> H[Equipment and services are attached]
+    H --> I[Technical ticket is created]
+    I --> J[Support specialist completes installation]
+    J --> K[Payment operation is registered]

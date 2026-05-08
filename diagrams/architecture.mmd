@@ -1,0 +1,27 @@
+flowchart LR
+    subgraph Clients
+        Desktop[Desktop App]
+        Web[Web SPA]
+        Mobile[Mobile App]
+    end
+
+    Desktop --> Gateway[API Gateway / Facade]
+    Web --> Gateway
+    Mobile --> Gateway
+
+    subgraph Backend
+        Gateway --> Catalog[Services Catalog]
+        Gateway --> Contracts[Contracts]
+        Gateway --> Support[Technical Support]
+        Gateway --> Capacity[Capacity Management]
+        Gateway --> Admin[Admin & RBAC]
+        Gateway --> Notifications[Notifications]
+    end
+
+    Catalog --> DB[(PostgreSQL)]
+    Contracts --> DB
+    Support --> DB
+    Capacity --> DB
+    Admin --> DB
+    Notifications --> Queue[(Message Queue)]
+    Notifications --> Email[Email/SMS/Push Provider]
